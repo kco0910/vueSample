@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>vueSample</title>
+    <script src="js/vue.js"></script>
+    <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+</head>
+<!--view-->
+<body>
+    <h3>例1:双向绑定</h3>
+    <div id="app">
+        <p>{{message}}</p>
+        <input type="text" v-model="message">
+    </div>
+    <h2>例2:v-if指令</h2><!--判断语句-->
+    <div id="app2">
+        <p v-if="yes">Yes!</p>
+        <p v-if="no">No!</p>
+        <p v-if="age >25">Age:{{age}}</p>
+        <p v-if="name.indexOf('fj') >=0">Name:{{ name }}</p>
+    </div>
+    <h3>例3：v-show指令</h3><!--始终渲染，设置css的style样式-->
+    <div id="app3">
+        <p v-show="yes">Yes!</p>
+        <p v-show="age > 16 ">Age:{{age}}</p>
+    </div>
+    <h3>例4：v-else指令</h3><!--需要和v-if 或v-show结合使用-->
+    <div id="app4">
+        <p v-if="age>16">Age:{{age}}</p>
+        <p v-else>你的年龄:{{age}}太小了</p>
+    </div>
+    <h3>例5:v-for指令</h3>
+    <div id="app5">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="person in people">
+                    <td>{{person.name}}</td>
+                    <td>{{person.age}}</td>
+                    <td>{{person.sex}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="js/sample.js"></script>
+</html>
